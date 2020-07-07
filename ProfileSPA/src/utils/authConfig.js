@@ -4,8 +4,8 @@ import { UserAgentApplication } from "msal";
 // visit https://azuread.github.io/microsoft-authentication-library-for-js/docs/msal/modules/_authenticationparameters_.html
 export const msalApp = new UserAgentApplication({
     auth: {
-        clientId: "Enter the Client Id (aka 'Application ID')",
-        authority: "https://login.microsoftonline.com/consumers",
+        clientId: "80e50f8c-8005-40dc-8cd5-873536e260a8",
+        authority: "https://login.microsoftonline.com/0e764dbe-944c-4623-8539-52ba164e79bb",
         validateAuthority: true,
         redirectUri: "http://localhost:3000",
         navigateToLoginRequestUrl: false
@@ -27,7 +27,7 @@ export const apiConfig = {
  * visit https://azuread.github.io/microsoft-authentication-library-for-js/docs/msal/modules/_authenticationparameters_.html
  */
 export const loginRequest = {
-    scopes: ["openid", "profile"]
+    scopes: ["openid", "profile", "email"]
 }
 
 // Add here scopes for access token to be used at the API endpoints.

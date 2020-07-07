@@ -50,13 +50,16 @@ const AuthHOC = WrappedComponent => class AuthProvider extends Component {
     }
 
     async onSignIn(redirect) {
-
+      console.log(`onSignIn ${redirect}`);
         if (redirect) {
             return msalApp.loginRedirect(loginRequest);
         }
 
         return msalApp.loginPopup(loginRequest)
             .then((account) => {
+                console.log(account);
+                console.log(`idToken: ${account.idToken.rawIdToken}`);
+                console.log(`expiration: ${account.idToken.claims.exp}`);
                 this.setState({account});
             })
             .catch(error => {
